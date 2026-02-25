@@ -2,54 +2,25 @@ import { createBrowserRouter } from "react-router-dom";
 import PublicLayout from "@/layouts/PublicLayout/PublicLayout";
 import Landing from "@/pages/Landing";
 import Temp from "@/pages/Temp";
+import PerformancePage from "@/pages/Performance/PerformancePage";
 
 export const router = createBrowserRouter([
 	{
 		path: "/",
 		element: <PublicLayout />,
-		// errorElement: (
-		// 	<Error404 />
-		// ),
 		children: [
 			{
 				index: true,
 				element: <Landing />,
 			},
 			{
-				path: "/temp",
+				path: "temp", // اسلش اول لازم نیست
 				element: <Temp />,
 			},
-			// {
-			// 	path: "/AboutUs",
-			// 	element: <AboutUs />,
-			// },
-			// {
+			{
+				path: "performance", // 👈 اینو اضافه کردیم
+				element: <PerformancePage />,
+			},
 		],
 	},
-	// {
-	// 	element: <PrivateLayout />,
-	// 	children: [
-	// 		{
-	// 			path: "/EditProfile",
-	// 			element: <EditProfile />,
-	// 		},
-	// 		{
-	// 			path: "/DashBoard",
-	// 			element: <DashBoard />,
-	// 		},
-	// 	],
-	// },
-	// {
-	// 	element: <AnotherLayout />,
-	// 	children: [
-	// 		{
-	// 			path: "/login",
-	// 			element: <Login />,
-	// 		},
-	// 		{
-	// 			path: "/temp",
-	// 			element: <Temp />,
-	// 		},
-	// 	],
-	// },
 ]);
